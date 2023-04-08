@@ -1,0 +1,69 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "DINOHAX (BETA)", HidePremium = true, SaveConfig = true, ConfigFolder = "KeySave", IntroText = "DinoHax Key System"})
+
+_G.Key1 = "48759834759872083470257948307502835987457324972974523649783246129764312"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+	OrionLib:MakeNotification({
+		Name = "Key Correct!",
+		Content = "Your Key Was Correct! Loading Script Now...",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+	wait (5)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DoorsCoolScripts/Doors-ULTIMATE-SCRIPT-V2-By-Dino/main/Doors%20ULTIMATE%20SCRIPT%20V2%20By%20Dino"))()
+end
+
+function CorrectKeyEntered()
+	OrionLib:MakeNotification({
+		Name = "Key Correct!",
+		Content = "Your Key Was Correct! Loading Script Now...",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+end
+
+function IncorrectKeyEntered()
+	OrionLib:MakeNotification({
+		Name = "Key Incorrect!",
+		Content = "Your Key Was Incorrect!",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+end
+
+
+local Tab = Window:MakeTab({
+	Name = "KEY SYSTEM",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "!GET KEY LINK!",
+	Callback = function()
+		setclipboard("https://discord.gg/trmuqjMRKU")
+      	end    
+})
+
+Tab:AddTextbox({
+	Name = "KEY",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end
+})
+
+Tab:AddButton({
+	Name = "!CHECK KEY!",
+	Callback = function()
+         if _G.KeyInput == _G.Key1 then
+			MakeScriptHub()
+			CorrectKeyEntered()
+		 else
+			IncorrectKeyEntered()
+		 end
+      	end    
+})
