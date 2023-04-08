@@ -1,8 +1,14 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "DINOHAX (BETA)", HidePremium = true, SaveConfig = true, ConfigFolder = "KeySave", IntroText = "DinoHax Key System"})
+local Window = OrionLib:MakeWindow({Name = "DinoHax Key System", HidePremium = true, SaveConfig = true, ConfigFolder = "KeySave", IntroText = "DinoHax Key System"})
 
-_G.Key1 = "48759834759872083470257948307502835987457324972974523649783246129764312"
-_G.KeyInput = "string"
+_G.Key1 = "4875983475987208347025794830750283598745732497297452364978324612976431"
+_G.KeyInput1 = "string"
+
+_G.Key2 = "key.bypass.hack"
+_G.KeyInput2 = "string"
+
+_G.Key3 = "dinohax.v0.1"
+_G.KeyInput3 = "string"
 
 function MakeScriptHub()
 	OrionLib:MakeNotification({
@@ -52,16 +58,17 @@ Tab:AddTextbox({
 	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
-		_G.KeyInput = Value
+		_G.KeyInput1 = Value
+		_G.KeyInput2 = Value
+		_G.KeyInput3 = Value
 	end
 })
 
 Tab:AddButton({
 	Name = "!CHECK KEY!",
 	Callback = function()
-         if _G.KeyInput == _G.Key1 then
+         if _G.KeyInput1 == _G.Key1 or _G.KeyInput2 == _G.Key2 or _G.KeyInput3 == _G.Key3 then
 			MakeScriptHub()
-			CorrectKeyEntered()
 		 else
 			IncorrectKeyEntered()
 		 end
