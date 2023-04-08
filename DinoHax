@@ -4,12 +4,6 @@ local Window = OrionLib:MakeWindow({Name = "DinoHax Key System", HidePremium = t
 _G.Key1 = "4875983475987208347025794830750283598745732497297452364978324612976431"
 _G.KeyInput1 = "string"
 
-_G.Key2 = "key.bypass.hack"
-_G.KeyInput2 = "string"
-
-_G.Key3 = "dinohax.v0.1"
-_G.KeyInput3 = "string"
-
 function MakeScriptHub()
 	OrionLib:MakeNotification({
 		Name = "Key Correct!",
@@ -59,15 +53,13 @@ Tab:AddTextbox({
 	TextDisappear = true,
 	Callback = function(Value)
 		_G.KeyInput1 = Value
-		_G.KeyInput2 = Value
-		_G.KeyInput3 = Value
 	end
 })
 
 Tab:AddButton({
 	Name = "!CHECK KEY!",
 	Callback = function()
-         if _G.KeyInput1 == _G.Key1 or _G.KeyInput2 == _G.Key2 or _G.KeyInput3 == _G.Key3 then
+         if _G.KeyInput1 == _G.Key1 then
 			MakeScriptHub()
 		 else
 			IncorrectKeyEntered()
